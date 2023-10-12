@@ -18,15 +18,13 @@ public class HomeServlet extends HttpServlet {
      * @see HttpServlet#HttpServlet()
      */
     public HomeServlet() {
-        super();
-        // TODO Auto-generated constructor stub
+        super();        
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
 		response.getWriter().append("Benvenuto");
 	}
 
@@ -34,7 +32,6 @@ public class HomeServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.getWriter().append("Operazione non prevista");
 	}
 
