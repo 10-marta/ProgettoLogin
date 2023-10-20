@@ -16,6 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 public class HomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static Logger logger=Logger.getLogger(HomeServlet.class.getName());
+	final String DEFAULT_USERNAME="Pluto";
+	final String DEFAULT_PASSWORD="password";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -24,13 +26,24 @@ public class HomeServlet extends HttpServlet {
         super(); 
         logger.info("Costruisco HomeServlet");
     }
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		logger.info("Ricevuta get");
-		response.getWriter().append("Benvenuto");
+		String user=request.getParameter("username");
+		String pass=request.getParameter("password");
+		if(DEFAULT_USERNAME.equals(user)&& DEFAULT_PASSWORD.equals(pass)) {
+			response.sendRedirect("admin.html");
+		}else {
+			response.getWriter()
+			.append("<p>Credenziali sbagliate")
+			.append("\nTorna indietro")
+			.append("\n<a href=\"login.html\">Accedi</a>")
+			.append("</p>");
+			
+		}
+		
 	}
 
 	/**
